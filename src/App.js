@@ -1,0 +1,27 @@
+import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HeaderComponent from './components/HeaderComponent';
+// import ListEmployeeComponent from './components/ListEmployeeComponent';
+import AddEmployeeComponent from './components/AddEmployeeComponent';
+import TabPanel from './pages/TabPanel';
+
+function App() {
+  return (
+    <div>
+      <Router>
+        <HeaderComponent />
+        <div className="container">
+          <Switch>
+            <Route exact path="" component={TabPanel}></Route>
+            {/* 
+              <Route path = "/employees" component = {ListEmployeeComponent}></Route>
+              <Route path = "/add-employee" component = {AddEmployeeComponent} ></Route>*/}
+              <Route path = "/edit-employee/:id" component = {AddEmployeeComponent}></Route> 
+          </Switch>
+        </div>
+      </Router>
+    </div>
+  );
+}
+
+export default App;
